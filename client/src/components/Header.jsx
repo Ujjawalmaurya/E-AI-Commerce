@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ cartCount = 0, onCartClick }) => {
     return (
         <header style={{
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -45,8 +45,12 @@ const Header = () => {
                     <button className="btn" style={{ color: '#64748b' }}>
                         Search
                     </button>
-                    <button className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>
-                        Cart (0)
+                    <button
+                        className="btn btn-primary"
+                        style={{ padding: '0.5rem 1rem' }}
+                        onClick={onCartClick}
+                    >
+                        Cart ({cartCount})
                     </button>
                 </div>
             </div>

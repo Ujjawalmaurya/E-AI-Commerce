@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, addToCart }) => {
     return (
         <div className="grid grid-cols-1 grid-cols-2 grid-cols-3 grid-cols-4">
             {products.map((product) => (
@@ -44,9 +44,12 @@ const ProductList = ({ products }) => {
                         </p>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                             <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-color)' }}>
-                                ${product.price.toFixed(2)}
+                                ₹{product.price.toFixed(2)}
                             </span>
-                            <button className="btn btn-primary">
+                            <button
+                                className="btn btn-primary"
+                                onClick={() => addToCart(product)}
+                            >
                                 Add to Cart
                             </button>
                         </div>
