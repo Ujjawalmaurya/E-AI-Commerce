@@ -24,6 +24,14 @@ app.get('/api/products', (req, res) => {
     });
 });
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Success',
+        health: "100%",
+        data: "Server is ready to serve!!!"
+    });
+});
+
 // Get single product
 app.get('/api/products/:id', (req, res) => {
     const sql = 'SELECT * FROM products WHERE id = ?';
